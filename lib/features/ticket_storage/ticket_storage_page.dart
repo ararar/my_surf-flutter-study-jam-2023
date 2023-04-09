@@ -3,9 +3,14 @@ import 'package:surf_flutter_study_jam_2023/widgets/add_ticket_modal_bottom_shee
 import 'package:surf_flutter_study_jam_2023/widgets/ticket_item_widget.dart';
 
 /// Экран “Хранения билетов”.
-class TicketStoragePage extends StatelessWidget {
+class TicketStoragePage extends StatefulWidget {
   const TicketStoragePage({Key? key}) : super(key: key);
 
+  @override
+  State<TicketStoragePage> createState() => _TicketStoragePageState();
+}
+
+class _TicketStoragePageState extends State<TicketStoragePage> {
   /// Функция для отображения модального окна
   Future<dynamic> _addTicketModalBottomSheet(BuildContext context) {
     return showModalBottomSheet(
@@ -15,7 +20,7 @@ class TicketStoragePage extends StatelessWidget {
         ),
       ),
       context: context,
-      builder: (context) => const AddTicketModalBottomSheetWidget(),
+      builder: (context) => const BottomSheetWidget(),
     );
   }
 
